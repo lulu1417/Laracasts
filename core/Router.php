@@ -4,12 +4,15 @@ class Router {
 		'GET' => [],
 		'POST' => [],
 	];
-	public static function load($file) {
+	public static function load($file) { //$file = routes.php;
 		$router = new static;
 		require $file;
 
 		return $router; //Router複製一個自己
 	}
+	
+// 	Router::load('routes.php')
+// 	->direct(Request::uri(), Request::method());
 
 	public function get($uri, $controller) {
 
